@@ -9,6 +9,10 @@ var app = express();
 app.use(bodyParser.json());
 app.set('port', 5000);
 
+app.get('/test',async(req,res)=>{
+  res.send("test ok")
+})
+
 app.post('/msg',async(req, res, next)=>{
   let { queueName, payload } = req.body;
   await MQservice.publishToQueue(queueName, payload);

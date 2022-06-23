@@ -2,7 +2,7 @@ var amqp2 = require('amqplib');
 
 var amqp = require('amqplib/callback_api');
 
-const CONN_URL = "amqp://default_user_q6ES30Clry-6X3V7Lwy:kRULI4o-cuwM86NUwfo8_jFPkDO1cI4G@172.30.253.152:5671";
+const CONN_URL = "amqp://default_user_q6ES30Clry-6X3V7Lwy:kRULI4o-cuwM86NUwfo8_jFPkDO1cI4G@172.30.253.152:5672";
 
 let ch = null;
 amqp.connect(CONN_URL, function (err, conn) {

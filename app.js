@@ -7,7 +7,7 @@ var express = require('express');
 var app = express();
 
 app.use(bodyParser.json());
-app.set('port', 5000);
+app.set('port', 8080);
 
 app.get('/test',async(req,res)=>{
   res.send("test ok")

@@ -2,8 +2,8 @@ var amqp2 = require('amqplib');
 
 var amqp = require('amqplib/callback_api');
 
-const CONN_URL = "amqp://default_user_q6ES30Clry-6X3V7Lwy:kRULI4o-cuwM86NUwfo8_jFPkDO1cI4G@rabbitmq-dev-deploy.dw-cp4ba.svc.cluster.local:5672";
-// const CONN_URL = "amqp://default_user_q6ES30Clry-6X3V7Lwy:kRULI4o-cuwM86NUwfo8_jFPkDO1cI4G@localhost:5671";
+const CONN_URL = "amqp://default_user_cgJHk2Gn5Yu29iNwW0V:n86T02EK6lkPW-pH9hWxBnvx_p8MS_0w@rabbitmq-dev-deploy.dw-cp4ba.svc.cluster.local:5672";
+// const CONN_URL = "amqp://default_user_cgJHk2Gn5Yu29iNwW0V:n86T02EK6lkPW-pH9hWxBnvx_p8MS_0w@localhost:5671";
 
 let ch = null;
 amqp.connect(CONN_URL, function (err, conn) {

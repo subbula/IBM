@@ -14,7 +14,8 @@ app.get('/test',async(req,res)=>{
 })
 
 app.post('/msg',async(req, res, next)=>{
-  let { queueName, payload } = req.body;
+  const queueName = 'SNOW_tickets_UAM_queue';
+  let {  payload } = req.body;
   await MQservice.publishToQueue(queueName, payload);
   res.statusCode = 200;
   res.data = {"message-sent":true};

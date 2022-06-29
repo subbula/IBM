@@ -9,7 +9,7 @@ var app = express();
 app.use(bodyParser.json());
 app.set('port', 5000);
 
-app.get('/test',async(req,res)=>{
+app.get('/',async(req,res)=>{
   res.send("test ok")
 })
 

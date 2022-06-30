@@ -24,8 +24,8 @@ exports.publishToQueue = async (queueName, data,callback) => {
 
 exports.subscribefrmQueue = async(queueName,callback)=>{
 	ch.consume(queueName, function (msg) {
-		console.log('.....');
-		callback(null,msg)
+		console.log('.....',msg);
+		callback(msg)
 		},{ noAck: true }
 	  );
 } 

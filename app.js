@@ -11,10 +11,12 @@ app.set('port', 5000);
 
 app.get('/',async(req,res)=>{
   res.send("test ok")
-})
+});
+
+const queueName = 'SNOW_tickets_UAM_queue';
 
 app.post('/msg',async(req, res, next)=>{
-  const queueName = 'SNOW_tickets_UAM_queue';
+  
   let {  payload } = req.body;
   await MQservice.publishToQueue(queueName, payload);
   res.statusCode = 200;
@@ -24,12 +26,15 @@ app.post('/msg',async(req, res, next)=>{
 })
 
 app.get('/subscribe', async(req, res)=> {
-  let { queueName } = req;
-  await subscribefrmQueue(queueName, payload);
-  res.statusCode = 200;
-  res.data = {"message-sent":true};
-  // next();
-  res.end();
+  // let { queueName } = req;
+ await MQservice.subscribefrmQueue(queueName,function(qres){
+    // return qres;
+    res.statusCode = 200;
+    res.send(qres.content.toString());
+
+  });
+  
+  // res.end();
 });
 
 

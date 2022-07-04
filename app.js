@@ -17,7 +17,7 @@ const queueName = 'SNOW_tickets_UAM_queue';
 
 app.post('/msg',async(req, res, next)=>{
   
-  let {  payload } = req.body;
+  let  payload  = req.body;
   await MQservice.publishToQueue(queueName, payload);
   res.statusCode = 200;
   res.data = {"message-sent":true};

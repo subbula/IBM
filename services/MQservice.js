@@ -18,7 +18,7 @@ amqp.connect(CONN_URL, function (err, conn) {
 });
 
 exports.publishToQueue = async (queueName, data,callback) => {
-	ch.sendToQueue(queueName,  Buffer.from(data),{persistent: true});
+	ch.sendToQueue(queueName,  Buffer.from(JSON.stringify(data)),{persistent: true});
 	// callback(null,{"200":"ok"})
  }
 

@@ -6,7 +6,7 @@ const axios = require('axios').default;
 
 // const CONN_URL = "amqp://default_user_ktT-qCwbyR1Wy8joWly:sBMNyDEz-FIf4Dh8qKbUmyErUcprDjTB@localhost:5671";
 // const CONN_URL = "amqp://default_user_cgJHk2Gn5Yu29iNwW0V:n86T02EK6lkPW-pH9hWxBnvx_p8MS_0w@rabbitmq-dev-deploy.dw-cp4ba.svc.cluster.local:5672";
-const CONN_URL = "amqp://default_user_ktT-qCwbyR1Wy8joWly:sBMNyDEz-FIf4Dh8qKbUmyErUcprDjTB@rabbitmq.dw-cp4ba.svc.cluster.local:5672";
+const CONN_URL = "amqp://default_user_ktT-qCwbyR1Wy8joWly:sBMNyDEz-FIf4Dh8qKbUmyErUcprDjTB@instance.instance-server-0.svc.cluster.local:5672";
 
 let ch = null;
 amqp.connect(CONN_URL, function (err, conn) {
